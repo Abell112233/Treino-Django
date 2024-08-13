@@ -6,11 +6,11 @@ class Aluno(models.Model):
     matricula = models.CharField(max_length=50)
     
     def __str__(self):
-        return self.nome
+        return (self.nome + ' - ' + self.matricula)
     
 class Curso(models.Model):
     nome = models.CharField(max_length=250)
-    carga_horaria = models.IntegerField()
+    carga_horaria = models.CharField(max_length=50)
     descricao = models.TextField()
     alunos = models.ManyToManyField(Aluno)
     
