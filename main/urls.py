@@ -16,10 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from suap.views import index, Informatica
+from suap.views import index, Informatica, Alimentos, Apicultura, ADS
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name='index'),
     path('informatica/', Informatica, name='informatica'),
+    path('alimentos/', Alimentos, name='alimentos'),
+    path('apicultura/', Apicultura, name='apicultura'),
+    path('ads/', ADS, name='ads'),
 ]
