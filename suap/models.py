@@ -16,7 +16,7 @@ class Aluno(models.Model):
     email = models.EmailField(null=True, blank=True)
     cpf = models.CharField(max_length=11, null=True, blank=True)
     data_nascimento = models.DateField(null=True, blank=True)
-    foto = models.ImageField(upload_to="fotos/", null=True, blank=True)
+    foto = models.ImageField(upload_to="curso/", null=True, blank=True)
     curso = models.ManyToManyField(Curso)
     def __str__(self):
         return (self.nome)

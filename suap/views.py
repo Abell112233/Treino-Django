@@ -37,3 +37,9 @@ def ADS(request):
         'lista5' : alunos
     }
     return render(request, 'suap/ADS.html', contexto)
+def Detalhe(request, aluno_id):
+    detalhes = Aluno.objects.get(id=aluno_id)
+    contexto = {
+        'detalhes' : detalhes   
+    }
+    return render(request, 'suap/detalhes_aluno.html', contexto)

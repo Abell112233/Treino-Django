@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from suap.views import index, Informatica, Alimentos, Apicultura, ADS
+from suap.views import index, Informatica, Alimentos, Apicultura, ADS, Detalhe
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -28,6 +28,8 @@ urlpatterns = [
     path('alimentos/', Alimentos, name='alimentos'),
     path('apicultura/', Apicultura, name='apicultura'),
     path('ads/', ADS, name='ads'),
+    path('aluno/<int:aluno_id>', Detalhe, name='detalhes_aluno'),
 ]
+
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
