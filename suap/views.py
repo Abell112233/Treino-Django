@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Curso, Aluno
+from .forms import AlunoForm, CursoForm
 
 # Create your views here.
 
@@ -43,3 +44,12 @@ def Detalhe(request, aluno_id):
         'detalhes' : detalhes   
     }
     return render(request, 'suap/detalhes_aluno.html', contexto)
+
+def Cadastro(request):
+    formA = AlunoForm()
+    fromC = CursoForm()
+    contexto = {
+        'formA' : formA,
+        'fromC' : fromC
+    }
+    return render(request, 'suap/cadastro.html', contexto)

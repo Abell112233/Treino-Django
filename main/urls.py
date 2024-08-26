@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from suap.views import index, Informatica, Alimentos, Apicultura, ADS, Detalhe
+from suap.views import index, Informatica, Alimentos, Apicultura, ADS, Detalhe, Cadastro
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -29,6 +29,7 @@ urlpatterns = [
     path('apicultura/', Apicultura, name='apicultura'),
     path('ads/', ADS, name='ads'),
     path('aluno/<int:aluno_id>', Detalhe, name='detalhes_aluno'),
+    path('cadastro/', Cadastro, name='cadastro'),
 ]
 
 if settings.DEBUG:
