@@ -25,4 +25,5 @@ class CursoForm(forms.ModelForm):
             'nome' : forms.TextInput(attrs={'class':'form-control'}),
             'descricao' : forms.Textarea(attrs={'class':'form-control'}),
             'carga_horaria' : forms.TextInput(attrs={'class':'form-control'}),
+            'imagem' : forms.FileInput(attrs={'class':'form-control'}),
         }

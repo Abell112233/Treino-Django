@@ -47,9 +47,9 @@ def Detalhe(request, aluno_id):
 
 def Cadastro(request):
     formA = AlunoForm()
-    fromC = CursoForm()
+    formC = CursoForm()
     contexto = {
         'formA' : formA,
-        'fromC' : fromC
+        'formC' : formC
     }
     return render(request, 'suap/cadastro.html', contexto)

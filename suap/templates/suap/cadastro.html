@@ -1,8 +1,15 @@
 {% extends "suap/base.html" %}
 {% block bloco %}
 <form method="post" enctype="multipart/form-data">
+    <h1>Cadastro de Curso</h1>
+    {% csrf_token %} 
+    {{formC}}
+    <button class="btn btn-primary btn-lg btn-block" type="submit">Enviar</button>
+</form> 
+<form method="post" enctype="multipart/form-data">
     <h1>Cadastro de Usuário</h1>
+    {% csrf_token %}
     {{formA}}
-    <button class="form-control" type="submit">Enviar</button>
+    <button class="btn btn-primary btn-lg btn-block" type="submit">Enviar</button>
 </form>  
 {% endblock %}
