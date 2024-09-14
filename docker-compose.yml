@@ -1,4 +1,4 @@
-version : "2.29.2"
+version: '3'
 
 services:
   django:
@@ -6,32 +6,35 @@ services:
       context: .
       dockerfile: ./compose/django/Dockerfile
 
-    image:  django_project
+    image: treino-django
+    container_name: treino-django
     depends_on:
       - nginx
     env_file:
-      - .env
+     - .env
     volumes:
-      - static_data:/app/static
-      - banco_data:/app/banco
-      - media_data:/app/media
-
+     - static_volume:/app/static
+     - media_volume:/app/media
+     - banco_volume:/app/banco
+    
     command: ./start
     restart: unless-stopped
-  
+
+
   nginx:
     build:
       context: .
       dockerfile: ./compose/nginx/Dockerfile
+    container_name: treino-nginx
     volumes:
-      - static_data:/app/static
-      - media_data:/app/media 
+      - static_volume:/app/static
+      - media_volume:/app/media
     ports:
-      - 82:80
+      - 83:80
     restart: unless-stopped
 
-
 volumes:
-  banco_data:
-  static_data:
-  media_data:
+  static_volume:
+  media_volume:
+  banco_volume:
+
